@@ -22,13 +22,14 @@ public class Calculator {
     }
 
     public static void main(String[] args) {
-        int choice, n1, exit, n2 = 0;
+        int choice, exit, n2 = 0, n1 = 0;
         double result;
         long fresult;
         do{
-            Scanner sc = new Scanner(System.in);
+
             System.out.println("Enter your choice: ");
             System.out.println("Enter \n1 : Factorial \n2 : Power \n3 : Square Root \n4 : Natural Log \n5 : Exit");
+            Scanner sc = new Scanner(System.in);
             choice = sc.nextInt();
             if(choice == 2){
                 System.out.println("Enter num1");
