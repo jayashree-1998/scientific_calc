@@ -8,7 +8,7 @@
         state: started
 
     - name: Pull docker image from docker hub
-      shell: docker pull lax98/scientific_calculator
+      shell: docker pull lax98/scientific_calculator:latest
 
     - name: Run the docker container
       shell: docker stop scientific_calculator && docker rm scientific_calculator && docker run -it --name scientific_calculator -d lax98/scientific_calculator

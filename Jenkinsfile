@@ -18,7 +18,7 @@ pipeline {
         stage('Build Image using Dockerfile'){
             steps{
                 echo 'Building docker Image'
-                sh "docker build -t lax98/scientific_calculator ."
+                sh "docker build -t lax98/scientific_calculator:latest ."
             }
         }
         stage('Login into docker hub'){
@@ -36,7 +36,7 @@ pipeline {
         stage('Delete Image from localsystem'){
             steps{
                 echo 'Deleting Docker Image in localsystem'
-                sh 'docker rmi lax98/scientific_calculator'
+                sh 'docker rmi lax98/scientific_calculator:latest'
             }
         }
         stage('Run ansible playbook'){
