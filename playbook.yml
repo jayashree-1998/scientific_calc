@@ -11,4 +11,4 @@
       shell: docker pull lax98/scientific_calculator
 
     - name: Run the docker container
-      shell: docker run -it --name scientific-calculator -d lax98/scientific_calculator
+      shell: docker stop calc && docker rm calc && docker run -it --name calc -d lax98/scientific_calculator
