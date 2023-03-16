@@ -12,5 +12,6 @@
 
     - name: Run the docker container
       shell: |
+        export LC_ALL=en_IN.UTF-8
         export LANG=en_US.UTF-8
         docker run -it --name scientific-calculator -d lax98/scientific_calculator
