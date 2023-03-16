@@ -42,7 +42,7 @@ pipeline {
         stage('Run ansible playbook'){
             steps{
                 echo 'Running the ansible playbook yml file'
-                sh 'ansible-playbook -i inventory playbook.yml'
+                sh 'export LC_ALL=en_IN.UTF-8;export LANG=en_US.UTF-8;ansible-playbook -i inventory playbook.yml'
             }
         }
 
