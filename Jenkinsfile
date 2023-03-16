@@ -39,5 +39,12 @@ pipeline {
                 sh 'docker rmi lax98/scientific_calculator'
             }
         }
+        stage('Run ansible playbook'){
+            steps{
+                echo 'Running the ansible playbook yml file'
+                sh 'ansible-playbook -i inventory playbook.yml'
+            }
+        }
+
     }
 }

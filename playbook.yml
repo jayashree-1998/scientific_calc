@@ -1,0 +1,14 @@
+- name: Pull docker image of the container from DockerHub
+  hosts: all
+  tasks:
+
+    - name: Start docker service
+      service:
+        name: docker
+        state: started
+
+    - name: Pull docker image from docker hub
+      shell: docker pull lax98/scientific_calculator
+
+    - name: Run the docker container
+      shell: docker run -it --name scientific-calculator -d lax98/scientific_calculator
