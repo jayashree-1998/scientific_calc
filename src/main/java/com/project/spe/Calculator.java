@@ -25,6 +25,8 @@ public class Calculator {
         int choice, exit, n2 = 0, n1 = 0;
         double result;
         long fresult;
+        System.out.println("Enter your choice: ");
+        System.out.println("Enter \n1 : Factorial \n2 : Power \n3 : Square Root \n4 : Natural Log \n5 : Exit");
         do{
 
             System.out.println("Enter your choice: ");
