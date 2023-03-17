@@ -21,11 +21,6 @@ public class Calculator {
         return Math.sqrt(n1);
     }
 
-    public  static double natural_log(int n1){
-
-
-    }
-
     public static void main(String[] args) {
         int choice, exit, n2 = 0, n1 = 0;
         double result;
