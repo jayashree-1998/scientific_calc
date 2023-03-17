@@ -30,13 +30,13 @@ pipeline {
         stage('Push Image to DockerHub'){
             steps{
                 echo 'Pushing Image into DockerHub'
-                sh 'docker push lax98/scientific_calculator:latest'
+                sh 'docker push lax98/scientific_calculator'
             }
         }
         stage('Delete Image from localsystem'){
             steps{
                 echo 'Deleting Docker Image in localsystem'
-                sh 'docker rmi lax98/scientific_calculator:latest'
+                sh 'docker rmi lax98/scientific_calculator'
             }
         }
         stage('Run ansible playbook'){
