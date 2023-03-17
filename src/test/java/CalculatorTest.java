@@ -3,6 +3,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotEquals;
 
 public class CalculatorTest {
     private Calculator objCalcUnderTest;
@@ -35,8 +36,8 @@ public class CalculatorTest {
 
     @Test
     public void SquareRootFalsePositive() {
-        assertEquals("Finding the squareroot of a number (false positive)",4, objCalcUnderTest.square_root(25), DELTA);
-        assertEquals("Finding the squareroot of a number (false positive)",5, objCalcUnderTest.square_root(36), DELTA);
+        assertNotEquals("Finding the squareroot of a number (false positive)",4, objCalcUnderTest.square_root(25), DELTA);
+        assertNotEquals("Finding the squareroot of a number (false positive)",5, objCalcUnderTest.square_root(36), DELTA);
     }
 
 }
