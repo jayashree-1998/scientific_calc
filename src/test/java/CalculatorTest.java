@@ -35,9 +35,9 @@ public class CalculatorTest {
     }
 
     @Test
-    public void SquareRootFalsePositive() {
-        assertNotEquals("Finding the squareroot of a number (false positive)",4, objCalcUnderTest.square_root(25), DELTA);
-        assertNotEquals("Finding the squareroot of a number (false positive)",5, objCalcUnderTest.square_root(36), DELTA);
+    public void SquareRootTrueNegative() {
+        assertNotEquals("Finding the squareroot of a number (true negative)",4, objCalcUnderTest.square_root(25), DELTA);
+        assertNotEquals("Finding the squareroot of a number (true negative)",5, objCalcUnderTest.square_root(36), DELTA);
     }
 
 }
