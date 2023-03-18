@@ -1,5 +1,6 @@
 package com.project.spe;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Calculator {
@@ -8,65 +9,133 @@ public class Calculator {
         if(n == 0) {
             return 1;
         }
-        else {
-            return (n * factorial(n - 1));
+        return(n * factorial(n - 1));
+    }
+
+    public static double power(double base, double exponent){
+        return Math.pow(base,exponent);
+    }
+
+    public static double square_root(int n){
+        return Math.sqrt(n);
+    }
+
+    public static double natural_log(int n){
+        if(n == 0) {
+            return (Double.NEGATIVE_INFINITY);
+        } else if (n == Double.POSITIVE_INFINITY) {
+            return( Double.POSITIVE_INFINITY);
+        } else {
+            return Math.log(n);
         }
     }
 
-    public static double power(int n1, int n2){
-        return Math.pow(n1,n2);
-    }
-
-    public static double square_root(int n1){
-        return Math.sqrt(n1);
-    }
-
     public static void main(String[] args) {
-        int choice, exit, n2 = 0, n1 = 0;
+        int choice, exit,n1 = 0;
         double result;
         long fresult;
-        do{
+        double base, exponent;
+        Scanner sc = new Scanner(System.in);
 
-            System.out.println("Enter your choice: ");
-            System.out.println("Enter \n1 : Factorial \n2 : Power \n3 : Square Root \n4 : Natural Log \n5 : Exit");
-            Scanner sc = new Scanner(System.in);
-            choice = sc.nextInt();
-            if(choice == 2){
-                System.out.println("Enter num1");
-                n1 = sc.nextInt();
-                System.out.println("Enter num2");
-                n2 = sc.nextInt();
-            }
-            else if(choice != 5) {
-                System.out.println("Enter the number");
-                n1 = sc.nextInt();
-            }
-            else {
-                break;
+        System.out.println("Please press Enter to use the scientific calculator");
+        sc.nextLine();
+
+        do{
+            choice = 0;
+            while(choice < 1 || choice > 5) {
+                try{
+                    System.out.println("Enter your choice: ");
+                    System.out.println("1 : Factorial \n2 : Power \n3 : Square Root \n4 : Natural Log \n5 : Exit");
+                    choice = sc.nextInt();
+                    if(choice < 1 || choice > 5){
+                        System.out.println("Please enter a valid choice");
+                    }
+                }
+                //for non numeric input
+                catch(InputMismatchException error){
+                    System.out.println("Please enter a valid choice");
+                }
+                sc.nextLine();
             }
             switch (choice) {
-                case 1:
+                    case 1:
+                    n1 = -1;
+                    while (n1 < 0) {
+                        try {
+                            System.out.println("Enter a non negative integer number");
+                            n1 = sc.nextInt();
+                            if (n1 < 0) {
+                                System.out.println("Factorial is only applicable on non-negative numbers!! ");
+                            }
+                            } catch (InputMismatchException error) {
+                                System.out.println("Factorial is only applicable on non-negative numbers!! ");
+                            }
+                            sc.nextLine();
+                    }
                     fresult = factorial(n1);
                     System.out.println("The factorial of " + n1 + " is = " + fresult);
                     break;
-                case 2:
-                    result = power(n1,n2);
-                    System.out.println("Power of "+n1+" raised to "+n2+ " = "+ result);
+                    case 2:
+                        base = -1;
+                        exponent = 2.3;
+                        while (base < 0 && (int)exponent != exponent) {
+                            try {
+                                System.out.println("Enter the base");
+                                base = sc.nextDouble();
+                                System.out.println("Enter the exponent");
+                                exponent = sc.nextDouble();
+                                if (base < 0 && (int)exponent != exponent) {
+                                    System.out.println("You cannot have a negative base with decimal exponent");
+                                    System.out.println("Enter a valid base and exponent");
+                                }
+                            } catch (InputMismatchException error) {
+                                System.out.println("Enter a valid base and exponent");
+                            }
+                            sc.nextLine();
+                        }
+                        result = power(base, exponent);
+                        System.out.println("Power of " + base + " raised to " + exponent + " = " + result);
                     break;
-                case 3:
+                    case 3:
+                    n1 = -1;
+                    while (n1 < 0) {
+                        try {
+                            System.out.println("Enter a non negative number");
+                            n1 = sc.nextInt();
+                            if (n1 < 0) {
+                                System.out.println("Square Root is only applicable on non-negative numbers!! ");
+                            }
+                        } catch (InputMismatchException error) {
+                            System.out.println("Square Root is only applicable on non-negative numbers!! ");
+                        }
+                        sc.nextLine();
+                    }
                     result = square_root(n1);
                     System.out.println("The square root of " + n1 + " is = " + result);
                     break;
                 case 4:
-                    System.out.println("Natural Log");
+                    n1 = -1;
+                    while (n1 < 0) {
+                        try {
+                            System.out.println("Enter a positive number");
+                            n1 = sc.nextInt();
+                            if (n1 < 0) {
+                                System.out.println("Natural Log is only applicable on positive numbers!! ");
+                            }
+                        } catch (InputMismatchException error) {
+                            System.out.println("Natural Log is only applicable on positive numbers!! ");
+                            }
+                        sc.nextLine();
+                    }
+                    result = natural_log(n1);
+                    System.out.println("The Natural Log of " + n1 + " is = " + result);
                     break;
                 case 5:
-                    break;
+                    sc.close();
+                    return;
                 default:
-                    System.out.println("Invalid Choice");
+                    System.out.println("Invalid Choice, Please enter valid choice!");
             }
-            System.out.println("Do you want to continue using the calculator? Press \n1. Yes \n2. No");
-            exit = sc.nextInt();
-        }while(exit == 1);
+        }while(true);
     }
 }
