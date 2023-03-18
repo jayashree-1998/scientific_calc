@@ -5,6 +5,6 @@ COPY ./target/scientific_calc-1.0-SNAPSHOT.jar ./
 #The WORKDIR command is used to define the working directory of a Docker container at any given time.
 WORKDIR ./
 #CMD - CMD is the command the container executes by default when you launch the built image
-CMD ["java", "-jar", "scientific_calc-1.0-SNAPSHOT.jar"]
+CMD ["java", "-jar", "scientific_calc-1.0-SNAPSHOT-jar-with-dependencies.jar"]
 
 
