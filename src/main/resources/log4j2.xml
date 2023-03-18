@@ -4,7 +4,7 @@
 <!--        <Console name="ConsoleAppender" target="SYSTEM_OUT">-->
 <!--            <PatternLayout pattern="%d{HH:mm a} [%t] %-5level %logger{36} - %msg%n"/>-->
 <!--        </Console>-->
-        <File name="FileAppender" fileName="application-${date:dd.MM.yyyy}.log" immediateFlush="false" append="true">
+        <File name="FileAppender" fileName="calculator.log" immediateFlush="false" append="true">
             <PatternLayout pattern="[Time: %d{HH:mm a} # Date: %d{dd/MM/yyyy}] [%-5level] [File: %c # Line: %L] --> %msg%n"/>
         </File>
     </Appenders>
