@@ -6,7 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="a5f42f48-c227-41af-a990-8c21f6ca6951" name="Changes" comment="jenkins file update">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/log4j2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/log4j2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,7 +68,7 @@
       <workItem from="1678959593483" duration="44875000" />
       <workItem from="1679155494747" duration="207000" />
       <workItem from="1679155725724" duration="6438000" />
-      <workItem from="1679341055835" duration="2339000" />
+      <workItem from="1679341055835" duration="3198000" />
     </task>
     <task id="LOCAL-00001" summary="jenkins file update">
       <created>1679072774590</created>
