@@ -66,6 +66,7 @@
                                 <archive>
                                     <manifest>
                                         <mainClass>com.project.spe.Calculator</mainClass>
+                                        <Multi-Release>true</Multi-Release>
                                     </manifest>
                                 </archive>
                                 <descriptorRefs>
