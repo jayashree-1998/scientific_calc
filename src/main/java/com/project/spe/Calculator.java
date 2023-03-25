@@ -17,15 +17,12 @@ public class Calculator {
         }
         return(n * factorial(n - 1));
     }
-
     public static double power(double base, double exponent){
         return Math.pow(base,exponent);
     }
-
     public static double square_root(int n){
         return Math.sqrt(n);
     }
-
     public static double natural_log(int n){
         if(n == 0) {
             return (Double.NEGATIVE_INFINITY);
@@ -34,10 +31,11 @@ public class Calculator {
         } else {
             return Math.log(n);
         }
+
     }
 
     public static void main(String[] args) {
-        int choice, exit,n1 = 0;
+        int choice,n1;
         double result;
         long fresult;
         double base, exponent;
@@ -99,6 +97,7 @@ public class Calculator {
                         try {
                             logger.info("Enter a valid base");
                             System.out.println("Enter the base");
+
                             base = sc.nextDouble();
                             logger.info("Enter a valid exponent");
                             System.out.println("Enter the exponent");
