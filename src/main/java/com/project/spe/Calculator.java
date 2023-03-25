@@ -45,6 +45,7 @@ public class Calculator {
         System.out.println("Please press Enter to use the scientific calculator");
         sc.nextLine();
         logger.info("Pressed Enter to enter the application");
+        System.out.println("");
 
         do{
             choice = 0;
